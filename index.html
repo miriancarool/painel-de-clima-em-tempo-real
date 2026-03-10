@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Previsão do tempo</title>
+</head>
+<body>
+         <div class="wrapper"> <!-- wrapper = embrulho> -->
+            <svg class="curva" viewBox="0 0 1000 160" preserveAspectRatio="none">
+             <path class="desktop" d="
+                    M 0 0
+                    L 0 120
+                    L 350 120
+                    C 490 120, 490 160, 500 160
+                    C 510 160, 510 120, 650 120
+                    L 1000 120
+                    L 1000 0
+                    Z
+                    "/>
+            </svg>
+            <main class="conteudo">
+                <div>
+                    <h1 class="texto-principal">Clima em tempo real</h1>
+                </div>
+                <section class="principal">
+                    <label for="cidade" class="rotulo-cidade">Digite o nome da cidade:</label>
+                    <div class="busca"><input id="cidade" class="input" type="text"> <button class="botao-buscar">Buscar</button></div>
+
+                    <div class="card">
+                        <h2 class="nome-cidade"></h2>
+                
+                            <div class="info-clima">
+                                <span class="data"></span>
+                                <div class="temperatura">
+                                    <span class="label-temperatura">Temperatura:</span>        <!--label = rotulo-->
+                                    <span class="valor-temperatura"></span>
+                                </div>
+                                <img class="imagem" src="" alt="icone do clima">
+                                <div class="humidade">
+                                    <span class="label-humidade">Humidade:</span>
+                                    <span class="valor-humidade"></span>
+                                </div>
+                                <div class="sensacao-termica">
+                                    <span class="label-sensacao">Sensação térmica:</span>
+                                    <span class="valor-sensacao"></span>
+                                </div>
+                                <div class="vento">
+                                    <span class="label-vento">Vento:</span>
+                                    <span class="valor-vento"></span>
+                                </div>
+                            </div>
+
+                            <p class="descricao-clima"></p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    <script src="scrips.js"></script>
+</body>
+</html>

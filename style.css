@@ -1,0 +1,291 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+}
+
+.principal label {
+    text-align: center;
+}
+
+.busca {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    max-width: 350px;
+}
+
+.erro {
+    border: 2px solid #b00020;
+    border-radius: 20px;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: #b00020;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    max-width: 220px;
+    padding: 0.5rem;       /* esse padding ajusta a altura do input*/
+    outline: none;
+    border: 1px solid #999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.055);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input:focus {
+    transform: scale(1.02);
+    border-color: rgb(1, 1, 99);
+}
+
+button {
+    width: 100%;
+    max-width: 70px;
+    border: 1px solid rgb(24, 24, 195);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.055);
+    background-color: rgb(24, 24, 195);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    transform: scale(1.02);
+    background-color: rgb(0, 0, 150);
+    border: none;
+    color: white;
+}
+
+input,
+button {
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card {
+    width: 70%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 1rem 1rem 2rem 1rem;
+
+    background-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+
+    opacity: 0;                                  /*totalmente invisivel*/
+    pointer-events: none;                        /*impede que o elemento receba eventos do mouse*/
+    max-height: 0;                               /*+ ou - faz o card não ocupar lugar fisico*/
+    transition:
+        opacity 0.5s ease,
+        max-height 0.6s ease;
+}
+
+.nome-cidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(0.5rem, 8vw, 1.5rem);
+    padding: clamp(0.5rem 6vw 1rem);
+    width: 100%;
+}
+
+.info-clima {
+    display: grid;                         /*sistema de layout bidimensional, linhas e colunas*/
+    grid-template-columns: 1fr 2fr 1fr;    /*fr -> fraction (fração do espaço disponível), nesse caso 4 partes -> 1° 1/4, 2° 2/4, 3° 1/4*/
+
+    align-items: center;                   /* eixo vertical      seguindo o padrão LTR -> Left To Right, direção padrão de escrita em português, inglês */
+    justify-items: center;                 /* eixo horizontal    no padrão LTR inline axis -> direção que o texto flui, block axis -> direção que as linhas se empilham*/
+
+    margin-top: 1rem;
+    gap: 0.8rem;
+}
+
+ .data {
+    border: 1px solid #000;
+    border-radius: 50%;
+    padding: 1rem;
+    width: clamp(3rem, 8vw, 3.6rem);
+    height: clamp(3rem, 8vw, 3.6rem);
+    font-size: clamp(0.2rem, 2.2vw, 0.8rem);
+
+    display: flex;
+    align-items: center;                  /*padrão row cima/baixo eixo vertical*/
+    justify-content: center;              /*padrão row esquerda direita eixo horizontal*/
+
+    white-space: nowrap;                  /*white-space -> comportamento do texto, nowrap -> nunca quebra a linha*/
+}
+
+.temperatura {
+    display: flex;
+    flex: 1;                              /*faz o elemento crescer para dividir o espaço disponível proporcionalmente com os outros itens*/
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: clamp(0.5rem, 4vw, 1rem);
+    margin: 0 auto;
+}
+
+.label-temperatura {
+    font-size: clamp(0.8rem, 2vw, 1rem)
+}
+
+.valor-temperatura {
+    font-size: clamp(1rem, 6vw, 3rem);
+    font-weight: bold;
+}
+
+.icone {
+    width: clamp(5rem, 10vw, 6rem);
+    height: clamp(5rem, 10vw, 6rem);
+    padding: 0.5rem;
+}
+
+.imagem {
+    opacity: 0;        
+    width: clamp(5rem, 10vw, 6rem);
+    height: clamp(5rem, 10vw, 6rem);        /*se viewport tiver 1200px -> 10vw = 120px*/
+}
+
+.humidade,
+.vento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: clamp(4rem, 10vw, 6rem);
+    padding: 0.8rem;
+    font-size: clamp(0.8rem, 2vw, 1rem)
+}
+
+.sensacao-termica {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+    padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.label-sensacao {
+    font-size: clamp(0.8rem, 2vw, 1rem)
+}
+
+.valor-sensacao {
+    font-size: clamp(0.8rem, 6vw, 1.5rem);
+    font-weight: bold;
+}
+
+.descricao-clima {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    border: 1px solid #000;
+    border-radius: 15px;
+    padding: 0.5rem;
+    margin: 0 auto;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: auto;
+    gap: 1.5rem;
+    transform: translateY(0);
+    transition: transform 0.6s ease;
+
+    /* quando flex-direction é row (padrão) --> justfy-content = horizontal e align-items = vertical, mas quando flex-direction é column (nesse caso) --> justfy-content = vertical e align-items = horizontal */
+}
+
+.curva {
+    width: 100%;
+    height: clamp(300px, 18vh, 400px);
+    flex-shrink: 0;
+    transition: height 0.6s ease;
+}
+
+@media (max-width: 768px) {
+    .curva { height: 20vh;}
+}
+
+.curva path {
+    fill: rgb(0, 0, 115);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wrapper.ativo .conteudo {
+    transform: translateY(-25px);
+}
+
+.wrapper.ativo .curva {
+    height: 80px;
+}
+
+.wrapper.ativo .card {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 500px;
+}
+
+.wrapper.ativo .imagem {
+    opacity: 1;
+    width: clamp(5rem, 10vw, 6rem);
+    height: clamp(5rem, 10vw, 6rem);
+}
+
+.ceu-limpo {
+    background-image: url(imagens/ceu_limpo.jpg);
+}
+.nuvens {
+    background-image: url(imagens/nuvens.jpg);
+}
+.chuva {
+    background-image: url(imagens/chuva.jpg);
+}
+.nevoa {
+    background-image: url(imagens/nevoa.jpg);
+}
+.neve {
+    background-image: url(imagens/neve.jpg);
+}
+.tempestade {
+    background-image: url(imagens/tempestade.jpg);
+}
+.nublado {
+    background-image: url(imagens/nublado.jpg);
+}
