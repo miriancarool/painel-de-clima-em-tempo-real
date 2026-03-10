@@ -157,8 +157,6 @@ botaoBuscar.addEventListener("click", () => {
        
             wrapper.classList.add("ativo")
 
-            console.log("Erro real:", error)
-
             botaoBuscar.disabled = false
             input.disabled = false
             rotuloCidade.textContent = "Digite o nome da cidade:"   
