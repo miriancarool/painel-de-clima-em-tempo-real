@@ -111,7 +111,7 @@ function atualizarClima(dados) {
 }
 
 
-const chaveApi = chaveGuardadaApi
+const chaveApi = "eaa742642ee0a0298e1fc7d48fdd771e"      //cole sua chave da API OpenWeather aqui
 
 
 botaoBuscar.addEventListener("click", () => {
