@@ -84,7 +84,7 @@ button {
 }
 
 .card {
-    width: 70%;
+    width: 80%;
     max-width: 500px;
 
     display: flex;
@@ -121,7 +121,7 @@ button {
     justify-items: center;                 /* eixo horizontal    no padrão LTR inline axis -> direção que o texto flui, block axis -> direção que as linhas se empilham*/
 
     margin-top: 1rem;
-    gap: 0.8rem;
+    gap: 0.6rem;
 }
 
  .data {
